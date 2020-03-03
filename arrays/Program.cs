@@ -29,7 +29,7 @@ namespace arrays
         static void PrintArray(int[] output)
         {
             string printing = "";
-            for (int i = 0; i < output.Length; i++) printing+= output[i] + ( i == output.Length-1 ? "" : " ");
+            for (int i = 0; i < output.Length; i++) printing += output[i] + (i == output.Length - 1 ? "" : " ");
             System.Console.WriteLine(printing);
         }
 
@@ -45,47 +45,51 @@ namespace arrays
             int temp = 0;
             switch (selection)
             {
-                case 'a': case 'A':
-                for (int i = 1; i < x.Length; i++)
-                {
-                    temp = x[i];
-                    x[i] = x[i-1];
-                    x[i-1] = temp;
-                }
-                break;
-                case 'b': case 'B':
-                for (int i = x.Length-2; i >= 0; i--)
-                {
-                    temp = x[i];
-                    x[i] = x[i+1];
-                    x[i+1] = temp;
-                }
-                break;
-                case 'c': case 'C':
-                for (int i=0;i<x.Length;i++) x[i]*=2;
-                break;
-                case 'd': case 'D':
-                x = Equalise(x);
-                break;
+                case 'a':
+                case 'A':
+                    for (int i = 1; i < x.Length; i++)
+                    {
+                        temp = x[i];
+                        x[i] = x[i - 1];
+                        x[i - 1] = temp;
+                    }
+                    break;
+                case 'b':
+                case 'B':
+                    for (int i = x.Length - 2; i >= 0; i--)
+                    {
+                        temp = x[i];
+                        x[i] = x[i + 1];
+                        x[i + 1] = temp;
+                    }
+                    break;
+                case 'c':
+                case 'C':
+                    for (int i = 0; i < x.Length; i++) x[i] *= 2;
+                    break;
+                case 'd':
+                case 'D':
+                    x = Equalise(x);
+                    break;
                 default:
-                x = new int[0];
-                break;
+                    x = new int[0];
+                    break;
             }
             return x;
         }
-        
+
         static int[] Equalise(int[] x)
         {
             int[] y = x;
 
-            for (int i = 1; i < x.Length-1; i++) y[i] = (x[i-1]+x[i+1])/2;
+            for (int i = 1; i < x.Length - 1; i++) y[i] = (x[i - 1] + x[i + 1]) / 2;
 
-            if(x.Length > 1 && x.Length%2==1)
+            if (x.Length > 1 && x.Length % 2 == 1)
             {
-                y[0] = (x[1]+x[x.Length-1])/2;
-                y[x.Length-1] = (x[0]+x[x.Length-2])/2;
+                y[0] = (x[1] + x[x.Length - 1]) / 2;
+                y[x.Length - 1] = (x[0] + x[x.Length - 2]) / 2;
             }
-            
+
             return y;
         }
     }
