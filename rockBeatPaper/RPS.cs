@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace rockBeatPaper
 {
@@ -8,6 +9,7 @@ namespace rockBeatPaper
         private int cpoints = 0;
         private int ties = 0;
         private static Random r = new Random();
+        private List<string> log = new List<string>();
 
         public void play()
         {
@@ -18,13 +20,16 @@ namespace rockBeatPaper
             else if ((player == 1 && computer == 3) || (player == 2 && computer == 1) || (player == 3 && computer == 2)) points++;
             else cpoints++;
 
+            addLog(player,computer);
+
             System.Console.WriteLine("Player: " + intToPlay(player) + " Computer: " + intToPlay(computer));
         }
 
         public string score()
         {
             int rounds = points + cpoints + ties;
-            return ("Rounds: " + rounds + "\tPlayer: " + points + "\tComputer: " + cpoints + "\tTies: " + ties);
+            return ("Rounds: " + rounds + "\tPlayer: " + points + "\tComputer: " + cpoints + "\t Ties: " + ties + "\t" +
+                 (points!=cpoints?(points>cpoints?"You are":"The computer is"):"Nobody is") + " winning");
         }
 
         private static int askPlay()
@@ -78,5 +83,14 @@ namespace rockBeatPaper
             }
             return y;
         }
+
+        private void addLog(int player, int computer)
+        {
+            if (player == computer) log.Add("Tie");
+            else if ((player == 1 && computer == 3) || (player == 2 && computer == 1) || (player == 3 && computer == 2)) log.Add("Player");
+            else log.Add("Computer");
+        }
+
+        public 
     }
 }
