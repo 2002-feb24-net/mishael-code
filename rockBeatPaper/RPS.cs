@@ -15,7 +15,7 @@ namespace rockBeatPaper
             int computer = comPlay();
 
             if (player == computer) ties++;
-            else if((player == 1 && computer == 3)||(player == 2 && computer == 1)||(player == 3 && computer == 2))points++;
+            else if ((player == 1 && computer == 3) || (player == 2 && computer == 1) || (player == 3 && computer == 2)) points++;
             else cpoints++;
 
             System.Console.WriteLine("Player: " + intToPlay(player) + " Computer: " + intToPlay(computer));
@@ -24,27 +24,27 @@ namespace rockBeatPaper
         public string score()
         {
             int rounds = points + cpoints + ties;
-            return ("Rounds: "+rounds+"\tPlayer: "+points+"\tComputer: "+cpoints+"\tTies: "+ties);
+            return ("Rounds: " + rounds + "\tPlayer: " + points + "\tComputer: " + cpoints + "\tTies: " + ties);
         }
 
         private static int askPlay()
         {
             string play;
             System.Console.Write("Enter (R)ock, (P)aper, or (S)isors: ");
-            do play = Console.ReadLine(); while(PlayToInt(play)==0);
+            do play = Console.ReadLine(); while (PlayToInt(play) == 0);
             return PlayToInt(play);
         }
 
         private static int comPlay()
         {
-            return r.Next(1,4);
+            return r.Next(1, 4);
         }
 
         private static string intToPlay(int x)
         {
-            if (x==1) return "Rock";
-            if (x==2) return "Paper";
-            if (x==3) return "Sisors";
+            if (x == 1) return "Rock";
+            if (x == 2) return "Paper";
+            if (x == 3) return "Sisors";
             return "invalid";
         }
 
@@ -57,24 +57,24 @@ namespace rockBeatPaper
                 case "rock":
                 case "r":
                 case "R":
-                y = 1;
-                break;
+                    y = 1;
+                    break;
                 case "Paper":
                 case "paper":
                 case "p":
                 case "P":
-                y = 2;
-                break;
+                    y = 2;
+                    break;
                 case "Sisors":
                 case "sisors":
                 case "s":
                 case "S":
-                y = 3;
-                break;
+                    y = 3;
+                    break;
                 default:
-                System.Console.WriteLine("invalid input");
-                y = 0;
-                break;
+                    System.Console.WriteLine("invalid input");
+                    y = 0;
+                    break;
             }
             return y;
         }

@@ -6,9 +6,9 @@ namespace rockBeatPaper
     {
         static void Main(string[] args)
         {
-            RPS  game = new RPS();
+            RPS game = new RPS();
 
-            while(ask("Do you want to play a round? "))
+            while (ask("Do you want to play a round? "))
             {
                 game.play();
                 System.Console.WriteLine(game.score());
@@ -19,7 +19,7 @@ namespace rockBeatPaper
         {
             System.Console.WriteLine(question);
             string response;
-            do response = Console.ReadLine(); while (!(response == "yes"|| response == "y" || response == "no" || response == "n"));
+            do response = Console.ReadLine(); while (!(response == "yes" || response == "y" || response == "no" || response == "n"));
             return response == "yes" || response == "y";
         }
     }
