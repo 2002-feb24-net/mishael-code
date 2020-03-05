@@ -29,7 +29,7 @@ namespace rockBeatPaper
         {
             int rounds = points + cpoints + ties;
             return ("Rounds: " + rounds + "\tPlayer: " + points + "\tComputer: " + cpoints + "\t Ties: " + ties + "\t" +
-                 (points!=cpoints?(points>cpoints?"You are":"The computer is"):"Nobody is") + " winning");
+                 (points!=cpoints?(points>cpoints?"You are":"The computer is"):"Nobody is") + " winning\n" + ViewLog()+"\n");
         }
 
         private static int askPlay()
@@ -88,9 +88,14 @@ namespace rockBeatPaper
         {
             if (player == computer) log.Add("Tie");
             else if ((player == 1 && computer == 3) || (player == 2 && computer == 1) || (player == 3 && computer == 2)) log.Add("Player");
-            else log.Add("Computer");
+            else log.Add("Comp");
         }
 
-        public 
+        public string ViewLog()
+        {
+            string output = "";
+            for (int i=0;i<log.Count;i++) output += log[i]+(i%15==14?"\n":"\t");
+            return output;
+        }
     }
 }
