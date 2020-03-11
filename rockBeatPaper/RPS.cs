@@ -20,9 +20,9 @@ namespace rockBeatPaper
             else if ((player == 1 && computer == 3) || (player == 2 && computer == 1) || (player == 3 && computer == 2)) points++;
             else cpoints++;
 
-            addLog(player,computer);
+            AddLog(player,computer);
 
-            System.Console.WriteLine("Player: " + intToPlay(player) + " Computer: " + intToPlay(computer));
+            System.Console.WriteLine("Player: " + IntToPlay(player) + " Computer: " + IntToPlay(computer));
         }
 
         public string score()
@@ -45,7 +45,7 @@ namespace rockBeatPaper
             return r.Next(1, 4);
         }
 
-        private static string intToPlay(int x)
+        private static string IntToPlay(int x)
         {
             if (x == 1) return "Rock";
             if (x == 2) return "Paper";
@@ -84,7 +84,7 @@ namespace rockBeatPaper
             return y;
         }
 
-        private void addLog(int player, int computer)
+        private void AddLog(int player, int computer)
         {
             if (player == computer) log.Add("Tie");
             else if ((player == 1 && computer == 3) || (player == 2 && computer == 1) || (player == 3 && computer == 2)) log.Add("Player");
