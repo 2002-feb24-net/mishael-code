@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPS.app", "RPS.app.csproj", "{F6993D5C-F53F-4F04-8D82-A113E1AD144D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSLibrary", "..\RPSLibrary\RPSLibrary.csproj", "{6A97BA07-2220-4655-8B6A-9106A70DAC0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6993D5C-F53F-4F04-8D82-A113E1AD144D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6993D5C-F53F-4F04-8D82-A113E1AD144D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6993D5C-F53F-4F04-8D82-A113E1AD144D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6993D5C-F53F-4F04-8D82-A113E1AD144D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A97BA07-2220-4655-8B6A-9106A70DAC0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A97BA07-2220-4655-8B6A-9106A70DAC0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A97BA07-2220-4655-8B6A-9106A70DAC0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A97BA07-2220-4655-8B6A-9106A70DAC0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FA1E714-5839-4007-A5F6-4C2685519E96}
+	EndGlobalSection
+EndGlobal
